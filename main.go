@@ -21,19 +21,20 @@ func hextodec(hexi string) string {
 
 func main() {
 	hextodec("")
+
 }
 
 // function to convert (bin) to dec
 
 func bintodec(bin string) string {
-	// convert string (bin) to dec
+	// 	// convert string (bin) to dec
 	num, err := strconv.ParseInt(bin, 16, 64)
 	if err != nil {
 		panic(err)
-		// panic(err), aborts a function and returns an error value. Prints error message
+		// 		// panic(err), aborts a function and returns an error value. Prints error message
 	}
 	dec := strconv.Itoa(int(num))
-	// convert int to string via 'Itoa'
+	// 	// convert int to string via 'Itoa'
 	return dec
-	// returning string
+	// 	// returning string
 }
