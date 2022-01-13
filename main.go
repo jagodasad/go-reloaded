@@ -41,3 +41,5 @@ func main() {
 
 	fmt.Println("decimal num: ", num)
 }
+
+//Every instance of (up) converts the word placed before in the Uppercase version of it. (Ex: "Ready, set, go (up) !" -> "Ready, set, GO !")
