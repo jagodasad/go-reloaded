@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func amain() {
 	newword := hextodec("F")
 	fmt.Println(newword)
 }
