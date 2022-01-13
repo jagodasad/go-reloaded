@@ -1,18 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
-func main() {
+// function to convert hex to dec
 
-	hexa := "F1"
-
-	deciman, err := strconv.ParseInt(hexa, 16, 32)
-
+func hextodec(hexi string) string {
+	//convert string (hex) to dec
+	num, err := strconv.ParseInt(hexi, 16, 64)
 	if err != nil {
-		fmt.Println(err)
+		panic(err)
+		//panic(err), aborts a function and returns an error value. Prints error message
 	}
-	fmt.Printf("Hexadecimal %s (base16) = Decimal %v (base10", hexa, decimal)
+	dec := strconv.Itoa(int(num))
+	// convert int to string via 'Itoa'
+	return dec
+	//returning string
 }
