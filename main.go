@@ -19,10 +19,10 @@ func hextodec(hexi string) string {
 	// returning string
 }
 
-func main() {
-	hextodec("")
+// func main() {
+// 	hextodec("")
 
-}
+// }
 
 // function to convert (bin) to dec
 
