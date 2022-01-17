@@ -1,9 +1,9 @@
-package main
+// package main
 
-import (
-	"fmt"
-	"strconv"
-)
+// import (
+// 	"fmt"
+// 	"strconv"
+// )
 
 // function to convert hex to dec
 
@@ -27,7 +27,7 @@ func hextodec(hexi string) string {
 
 // function to convert (bin) to dec
 
-func main() {
+func bmain() {
 	bin_num := "111"
 
 	num, err := strconv.ParseInt(bin_num, 2, 64)
@@ -65,7 +65,7 @@ func ToLower(s string) string {
 }
 
 // Every instance of (cap) transforms the previous word in the capitalized version of it. (Ex: "Welcome to the Brooklyn bridge (cap)" -> "Welcome to the Brooklyn Bridge")
-func capitalise(s string) string {
+func bcapitalise(s string) string {
 	runes := []rune(s)
 	strlen := 0
 	for i := range runes {
