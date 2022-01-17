@@ -28,21 +28,17 @@ func hextodec(hexi string) string {
 // function to convert (bin) to dec
 
 func main() {
-
 	bin_num := "111"
 
 	num, err := strconv.ParseInt(bin_num, 2, 64)
-
 	if err != nil {
-
 		panic(err)
-
 	}
 
 	fmt.Println("decimal num: ", num)
 }
 
-//Every instance of (up) converts the word placed before in the Uppercase version of it. (Ex: "Ready, set, go (up) !" -> "Ready, set, GO !")
+// Every instance of (up) converts the word placed before in the Uppercase version of it. (Ex: "Ready, set, go (up) !" -> "Ready, set, GO !")
 
 func ToUpper(s string) string {
 	characters := []rune(s)
@@ -69,3 +65,26 @@ func ToLower(s string) string {
 }
 
 // Every instance of (cap) transforms the previous word in the capitalized version of it. (Ex: "Welcome to the Brooklyn bridge (cap)" -> "Welcome to the Brooklyn Bridge")
+func capitalise(s string) string {
+	runes := []rune(s)
+	strlen := 0
+	for i := range runes {
+		strlen = i + 1
+	}
+	for i := 0; i < strlen; i++ {
+		if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z'))) {
+			if runes[i] >= 'a' && runes[i] <= 'z' {
+				runes[i] = rune(runes[i] - 32)
+			}
+		} else if i == 0 {
+			if runes[i] >= 'a' && runes[i] <= 'z' {
+				runes[i] = rune(runes[i] - 32)
+			}
+		} else {
+			if runes[i] >= 'A' && runes[i] <= 'Z' {
+				runes[i] = rune(runes[i] + 32)
+			}
+		}
+	}
+	return string(runes)
+}
