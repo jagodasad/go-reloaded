@@ -56,17 +56,20 @@ func to_upper(s string) string {
 // }
 
 // converts word to lowercase
-func to_lower(s string) string {
-	sentence := []rune(s)
-	for i := 0; i < len(sentence); i++ {
+// func to_lower(s string) string {
+// 	sentence := []rune(s)
+// 	for i := 0; i < len(sentence); i++ {
 
-		currentLetter := sentence[i]
+// 		currentLetter := sentence[i]
 
-		if currentLetter >= 'A' && currentLetter <= 'Z' {
-			sentence[i] = sentence[i] + 32
-		}
-	}
-	return string(sentence)
+// 		if currentLetter >= 'A' && currentLetter <= 'Z' {
+// 			sentence[i] = sentence[i] + 32
+// 		}
+// 	}
+// 	return string(sentence)
+// }
+func to_lower(str string) string {
+	return strings.ToLower(str)
 }
 
 // func ToLower(s string) string
@@ -110,12 +113,6 @@ func first_rune(s string) string {
 func capitalise(str string) string {
 	return strings.Title(str)
 }
-
-// func Title(s string) string
-// func main() {
-//     res := strings.Title("this is a test sentence")
-//     fmt.Println(res)
-// }
 
 // seperate string by spaces and appends to string list
 func split_white_spaces(s string) []string {
