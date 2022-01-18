@@ -23,6 +23,13 @@ func compare(a, b string) int {
 	return 0
 }
 
+// func Compare(a, b string) int
+// func main() {
+// 	fmt.Println(strings.Compare("a", "b"))
+// 	fmt.Println(strings.Compare("a", "a"))
+// 	fmt.Println(strings.Compare("b", "a"))
+// }
+
 // converts word to uppercase
 func to_upper(s string) string {
 	sentence := []rune(s)
@@ -37,6 +44,16 @@ func to_upper(s string) string {
 	return string(sentence)
 }
 
+// func ToUpper(s string) string
+// import (
+// 	"fmt"
+// 	"strings"
+// )
+
+// func main() {
+// 	fmt.Println(strings.ToUpper("Gopher"))
+// }
+
 // converts word to lowercase
 func to_lower(s string) string {
 	sentence := []rune(s)
@@ -50,6 +67,11 @@ func to_lower(s string) string {
 	}
 	return string(sentence)
 }
+
+// func ToLower(s string) string
+// func main() {
+// 	fmt.Println(strings.ToLower("Gopher"))
+// }
 
 // gets the first rune of a string
 func first_rune(s string) string {
@@ -84,6 +106,12 @@ func capitalise(s string) string {
 	return string(runes)
 }
 
+// func Title(s string) string
+// func main() {
+//     res := strings.Title("this is a test sentence")
+//     fmt.Println(res)
+// }
+
 // seperate string by spaces and appends to string list
 func split_white_spaces(s string) []string {
 	var str []string
@@ -106,6 +134,11 @@ func split_white_spaces(s string) []string {
 	}
 	return str
 }
+
+// func Fields(s string) []string
+// func main() {
+// 	fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
+// }
 
 func quotes(s string) string {
 	str := ""
