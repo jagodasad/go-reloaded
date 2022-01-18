@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // quits if there's an error
@@ -80,30 +81,34 @@ func first_rune(s string) string {
 }
 
 // capitalises the first character of a word
-func capitalise(s string) string {
-	runes := []rune(s)
+// func capitalise(s string) string {
+// 	runes := []rune(s)
 
-	strlen := 0
-	for i := range runes {
-		strlen = i + 1
-	}
+// 	strlen := 0
+// 	for i := range runes {
+// 		strlen = i + 1
+// 	}
 
-	for i := 0; i < strlen; i++ {
-		if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z'))) {
-			if runes[i] >= 'a' && runes[i] <= 'z' {
-				runes[i] = rune(runes[i] - 32)
-			}
-		} else if i == 0 {
-			if runes[i] >= 'a' && runes[i] <= 'z' {
-				runes[i] = rune(runes[i] - 32)
-			}
-		} else {
-			if runes[i] >= 'A' && runes[i] <= 'Z' {
-				runes[i] = rune(runes[i] + 32)
-			}
-		}
-	}
-	return string(runes)
+// 	for i := 0; i < strlen; i++ {
+// 		if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z'))) {
+// 			if runes[i] >= 'a' && runes[i] <= 'z' {
+// 				runes[i] = rune(runes[i] - 32)
+// 			}
+// 		} else if i == 0 {
+// 			if runes[i] >= 'a' && runes[i] <= 'z' {
+// 				runes[i] = rune(runes[i] - 32)
+// 			}
+// 		} else {
+// 			if runes[i] >= 'A' && runes[i] <= 'Z' {
+// 				runes[i] = rune(runes[i] + 32)
+// 			}
+// 		}
+// 	}
+// 	return string(runes)
+// }
+
+func capitalise(str string) string {
+	return strings.Title(str)
 }
 
 // func Title(s string) string
