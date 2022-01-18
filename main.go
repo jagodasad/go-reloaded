@@ -32,6 +32,7 @@ func compare(a, b string) int {
 // }
 
 // converts word to uppercase
+// USED SHORTER
 // func to_upper(s string) string {
 // 	sentence := []rune(s)
 // 	for i := 0; i < len(sentence); i++ {
@@ -49,6 +50,7 @@ func to_upper(str string) string {
 }
 
 // converts word to lowercase
+// USED SHORTER
 // func to_lower(s string) string {
 // 	sentence := []rune(s)
 // 	for i := 0; i < len(sentence); i++ {
@@ -72,6 +74,7 @@ func first_rune(s string) string {
 }
 
 // capitalises the first character of a word
+// USED SHORTER
 // func capitalise(s string) string {
 // 	runes := []rune(s)
 
