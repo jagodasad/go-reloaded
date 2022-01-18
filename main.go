@@ -32,28 +32,21 @@ func compare(a, b string) int {
 // }
 
 // converts word to uppercase
-func to_upper(s string) string {
-	sentence := []rune(s)
-	for i := 0; i < len(sentence); i++ {
+// func to_upper(s string) string {
+// 	sentence := []rune(s)
+// 	for i := 0; i < len(sentence); i++ {
 
-		currentLetter := sentence[i]
+// 		currentLetter := sentence[i]
 
-		if currentLetter >= 'a' && currentLetter <= 'z' {
-			sentence[i] = sentence[i] - 32
-		}
-	}
-	return string(sentence)
-}
-
-// func ToUpper(s string) string
-// import (
-// 	"fmt"
-// 	"strings"
-// )
-
-// func main() {
-// 	fmt.Println(strings.ToUpper("Gopher"))
+// 		if currentLetter >= 'a' && currentLetter <= 'z' {
+// 			sentence[i] = sentence[i] - 32
+// 		}
+// 	}
+// 	return string(sentence)
 // }
+func to_upper(str string) string {
+	return strings.ToUpper(str)
+}
 
 // converts word to lowercase
 // func to_lower(s string) string {
@@ -71,11 +64,6 @@ func to_upper(s string) string {
 func to_lower(str string) string {
 	return strings.ToLower(str)
 }
-
-// func ToLower(s string) string
-// func main() {
-// 	fmt.Println(strings.ToLower("Gopher"))
-// }
 
 // gets the first rune of a string
 func first_rune(s string) string {
