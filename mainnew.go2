@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -24,11 +25,45 @@ func compare(a, b string) int {
 	return 0
 }
 
+// func Compare(a, b string) int
+// func main() {
+// 	fmt.Println(strings.Compare("a", "b"))
+// 	fmt.Println(strings.Compare("a", "a"))
+// 	fmt.Println(strings.Compare("b", "a"))
+// }
+
 // converts word to uppercase
+// USED SHORTER
+// func to_upper(s string) string {
+// 	sentence := []rune(s)
+// 	for i := 0; i < len(sentence); i++ {
+
+// 		currentLetter := sentence[i]
+
+// 		if currentLetter >= 'a' && currentLetter <= 'z' {
+// 			sentence[i] = sentence[i] - 32
+// 		}
+// 	}
+// 	return string(sentence)
+// }
 func to_upper(str string) string {
 	return strings.ToUpper(str)
 }
 
+// converts word to lowercase
+// USED SHORTER
+// func to_lower(s string) string {
+// 	sentence := []rune(s)
+// 	for i := 0; i < len(sentence); i++ {
+
+// 		currentLetter := sentence[i]
+
+// 		if currentLetter >= 'A' && currentLetter <= 'Z' {
+// 			sentence[i] = sentence[i] + 32
+// 		}
+// 	}
+// 	return string(sentence)
+// }
 func to_lower(str string) string {
 	return strings.ToLower(str)
 }
@@ -40,10 +75,38 @@ func first_rune(s string) string {
 }
 
 // capitalises the first character of a word
+// USED SHORTER
+// func capitalise(s string) string {
+// 	runes := []rune(s)
+
+// 	strlen := 0
+// 	for i := range runes {
+// 		strlen = i + 1
+// 	}
+
+// 	for i := 0; i < strlen; i++ {
+// 		if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z'))) {
+// 			if runes[i] >= 'a' && runes[i] <= 'z' {
+// 				runes[i] = rune(runes[i] - 32)
+// 			}
+// 		} else if i == 0 {
+// 			if runes[i] >= 'a' && runes[i] <= 'z' {
+// 				runes[i] = rune(runes[i] - 32)
+// 			}
+// 		} else {
+// 			if runes[i] >= 'A' && runes[i] <= 'Z' {
+// 				runes[i] = rune(runes[i] + 32)
+// 			}
+// 		}
+// 	}
+// 	return string(runes)
+// }
+
 func capitalise(str string) string {
 	return strings.Title(str)
 }
 
+//strs := strings.Split(s, " ")
 // seperate string by spaces and appends to string list
 func split_white_spaces(s string) []string {
 	var str []string
@@ -126,16 +189,44 @@ func remove_spaces(s string) string {
 }
 
 func main() {
-	GoReloaded()
-}
-
-// reads file and saves content to 'data' var
-func GoReloaded() {
-	data, err := os.ReadFile(os.Args[1])
+	inputFileName := os.Args[1]
+	data, err := os.ReadFile(inputFileName)
 	check(err)
 	input := string(data)
-	result := split_white_spaces(input)
+	output := GoReloaded(input)
+	fmt.Println(output)
+}
 
+// regex.Replace(str, '(.+)(\s+)([!?:])(.+)', '$1$3$4', regexp.GLOBAL)
+// reads file and saves content to 'data' var
+func GoReloaded(input string) string {
+	//	data, err := os.ReadFile()
+	//	check(err)
+	//	input := string(data)
+	//	result := split_white_spaces(input)
+	//	result := strings.Split(input, " ")
+
+	output := ReplaceHexWithDecInStr(input)
+
+	return output
+}
+
+func ReplaceHexWithDecInStr(s string) string {
+	re := regexp.MustCompile(`(\w+)\s\(hex\)`)
+	hexes := re.FindAllStringSubmatch(s, -1)
+
+	for i := range hexes {
+		hex := hexes[i][1]
+		decin, err := strconv.ParseInt(hex, 16, 64)
+		check(err)
+		dec := strconv.Itoa(int(decin))
+		s = strings.ReplaceAll(s, hex+" (hex)", dec)
+	}
+
+	return s
+}
+
+/*
 	// runs range loop to modify result
 	for i, v := range result {
 		// replaces the word before with its decimal version
@@ -217,25 +308,6 @@ func GoReloaded() {
 		}
 		if compare(v, "a") == 0 && first_rune(result[i+1]) == "h" {
 			result[i] = "an"
-		} else {
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "a" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "e" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "i" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "o" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "u" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "h" {
-				result[i] = "An"
-			}
 		}
 	}
 
@@ -285,3 +357,4 @@ func GoReloaded() {
 	check(words)
 	fmt.Println(words)
 }
+*/
