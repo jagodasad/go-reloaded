@@ -7,19 +7,6 @@ import (
 	"testing"
 )
 
-// func TestGoReloadedHexToDec(t *testing.T) {
-
-// 	input := "Simply add 42 (hex) and 10 (bin) and you will see the result is 68."
-// 	// real expected := "Simply add 66 and 2 and you will see the result is 68."
-// 	expected := "Simply add 66 and 10 (bin) and you will see the result is 68."
-
-// 	got := GoReloaded(input)
-
-// 	if expected != got {
-// 		t.Errorf("got %q, expected %q", got, expected)
-// 	}
-// }
-
 // This test file tests the go-reloaded project against the test cases on audit page
 func TestGoReloaded(t *testing.T) {
 	inputFile, outputFile := "sample.txt", "result.txt"
