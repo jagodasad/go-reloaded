@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Harold Wilson: 'I am an optimist, but an optimist who carries a raincoat.'
+=======
+I have to pack 5 outfits. Packed 26 just to be sure
+>>>>>>> b503c3403a07bdf8e1c9b6ab43f41456df09c16d
