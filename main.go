@@ -67,11 +67,6 @@ func split_white_spaces(s string) []string {
 	return str
 }
 
-// func Fields(s string) []string
-// func main() {
-// 	fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
-// }
-
 func quotes(s string) string {
 	str := ""
 	var removeSpace bool
@@ -192,6 +187,7 @@ func GoReloaded() {
 
 			le := len(result[i+1])
 			numb := result[i+1][:le-1]
+
 			nu, err := strconv.Atoi(numb)
 			check(err)
 
@@ -217,26 +213,26 @@ func GoReloaded() {
 		}
 		if compare(v, "a") == 0 && first_rune(result[i+1]) == "h" {
 			result[i] = "an"
-		} else {
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "a" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "e" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "i" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "o" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "u" {
-				result[i] = "An"
-			}
-			if compare(v, "A") == 0 && first_rune(result[i+1]) == "h" {
-				result[i] = "An"
-			}
 		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "a" {
+			result[i] = "An"
+		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "e" {
+			result[i] = "An"
+		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "i" {
+			result[i] = "An"
+		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "o" {
+			result[i] = "An"
+		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "u" {
+			result[i] = "An"
+		}
+		if compare(v, "A") == 0 && first_rune(result[i+1]) == "h" {
+			result[i] = "An"
+		}
+
 	}
 
 	// calls remove_tags() and split_white_spaces() and gets a new result variable
